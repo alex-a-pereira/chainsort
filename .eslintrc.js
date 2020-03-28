@@ -76,6 +76,7 @@ module.exports = {
     "eol-last": [
       "error",
       "always"
-    ]
+    ],
+    "object-curly-spacing": ["error", "always"]
   }
 };
