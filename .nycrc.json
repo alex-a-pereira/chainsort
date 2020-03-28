@@ -1,0 +1,11 @@
+{
+  "all": true,
+  "cache": true,
+  "include": [
+    "src/**",
+    "!src/index.js"
+  ],
+  "exclude": [
+    "test/**"
+  ]
+}
