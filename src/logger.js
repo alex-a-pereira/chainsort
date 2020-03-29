@@ -1,4 +1,4 @@
-const logLevels = {
+export const LOG_LEVELS = {
   VERBOSE: {
     level: 1,
     func: console.log // eslint-disable-line no-console
@@ -24,11 +24,11 @@ const logLevels = {
 export default new class Logger {
   constructor() {
     this.minLevelString = (process.env.CHAINSORT_LOG_LEVEL || 'error').toUpperCase();
-    this.minLevel = logLevels[this.minLevelString].level;
+    this.minLevel = LOG_LEVELS[this.minLevelString].level;
   }
 
   _log(levelString, ...args) {
-    let { level, func } = logLevels[levelString];
+    let { level, func } = LOG_LEVELS[levelString];
     if(level >= this.minLevel) {
       func(this._prefix, ...args);
     }

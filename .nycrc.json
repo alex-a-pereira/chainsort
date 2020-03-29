@@ -3,7 +3,8 @@
   "cache": true,
   "include": [
     "src/**",
-    "!src/index.js"
+    "!src/index.js",
+    "!src/logger.js"
   ],
   "exclude": [
     "test/**"
