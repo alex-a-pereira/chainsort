@@ -18,7 +18,7 @@ export const LOG_LEVELS = {
   ERROR: {
     level: 5,
     func: console.error // eslint-disable-line no-console
-  },
+  }
 };
 
 export default new class Logger {

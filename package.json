@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "babel src --watch --out-dir dist",
     "build": "babel src --out-dir dist",
-    "lint": "eslint src/**",
+    "lint": "eslint src/** test/**",
     "test": "nyc mocha --require @babel/register",
     "test-nlc": "mocha --require @babel/register"
   },

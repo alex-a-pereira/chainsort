@@ -77,6 +77,9 @@ module.exports = {
       "error",
       "always"
     ],
-    "object-curly-spacing": ["error", "always"]
+    "object-curly-spacing": ["error", "always"],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "comma-dangle": ["error", "never"],
+    "array-bracket-spacing": ["error", "never"]
   }
 };
