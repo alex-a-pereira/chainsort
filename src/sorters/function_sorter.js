@@ -10,10 +10,7 @@ export default class FunctionSorter extends BaseSorter {
     return this._sort(data, ...functions);
   }
 
-  // byFunctionAsync(data, ...functions) {
-  //   return new Promise((resolve, reject) => {
-  //     let result = this._sort(data, ...functions);
-  //     resolve(result);
-  //   });
-  // }
+  async byFunctionsAsync(data, ...functions) {
+    return this._sort(data, ...functions);
+  }
 }
