@@ -9,8 +9,8 @@
     "dev": "babel src --watch --out-dir dist",
     "build": "babel src --out-dir dist",
     "lint": "eslint src/** test/**",
-    "test": "nyc mocha --require @babel/register",
-    "test-nlc": "mocha --require @babel/register"
+    "test": "nyc mocha",
+    "test-nlc": "mocha"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -24,6 +24,8 @@
     "sinon": "^9.0.0"
   },
   "dependencies": {
-    "dotenv": "^8.2.0"
+    "core-js": "^3.6.4",
+    "dotenv": "^8.2.0",
+    "regenerator-runtime": "^0.13.5"
   }
 }
