@@ -1,13 +1,7 @@
 import 'core-js/stable';
 import 'regenerator-runtime';
-import dotenv from 'dotenv';
-dotenv.config();
-import {} from 'dotenv/config';
+import '@babel/register';
 
-import logger from './logger';
+import FunctionSorter from './sorters/function_sorter';
 
-logger.verbose('verbose');
-logger.debug('debug');
-logger.info('info');
-logger.warn('warn');
-logger.error('error');
+module.exports = new FunctionSorter();
