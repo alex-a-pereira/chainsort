@@ -4,4 +4,11 @@ import '@babel/register';
 
 import FunctionSorter from './sorters/function_sorter';
 
-module.exports = new FunctionSorter();
+const fs = new FunctionSorter();
+
+module.exports = {
+  byFunctions: fs.byFunctions.bind(fs),
+  promises: {
+    byFunctionsAsync: fs.byFunctionsAsync.bind(fs)
+  }
+};
