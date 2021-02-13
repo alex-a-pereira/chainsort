@@ -1,5 +1,7 @@
 import BaseSorter from './base_sorter';
 
+import { getNestedValue } from '../utils/typeUtils';
+
 const SORTABLE_TYPES = [
   'boolean',
   'number',
@@ -15,8 +17,8 @@ export default class PropertySorter extends BaseSorter {
     // convert array of props into array of sorting functions
     const funcs = properties.map(prop => {
       return (a, b) => {
-        let aProp = a[prop];
-        let bProp = b[prop];
+        let aProp = getNestedValue(a, prop);
+        let bProp = getNestedValue(b, prop);
 
         const tA = typeof aProp;
         const tB = typeof bProp;
