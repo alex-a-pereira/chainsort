@@ -2,8 +2,8 @@ import 'core-js/stable';
 import 'regenerator-runtime';
 import '@babel/register';
 
-import FunctionSorter from './sorters/function_sorter';
-import PropertySorter from './sorters/property_sorter';
+import FunctionSorter from './sorters/functionSorter';
+import PropertySorter from './sorters/propertySorter';
 
 const fs = new FunctionSorter();
 const ps = new PropertySorter();

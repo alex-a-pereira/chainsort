@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import FunctionSorter from '../../src/sorters/function_sorter';
+import FunctionSorter from '../../src/sorters/functionSorter';
 
 describe('FunctionSorter', () => {
   describe('byFunctions', () => {
