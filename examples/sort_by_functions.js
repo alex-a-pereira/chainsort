@@ -1,4 +1,4 @@
-const chainsort = require('./dist');
+const chainsort = require('../dist');
 
 let raw = [
   { firstName: 'Alex', lastName: 'Pereira', age: 22 },
@@ -25,7 +25,8 @@ const sortByAge = (a, b) => {
   return a.age > b.age ? 1 : -1;
 };
 
-chainsort.byFunctions(raw, sortByFirstName, sortByLastName, sortByAge);
+const sortedItems = chainsort.byFunctions(raw, [sortByFirstName, sortByLastName, sortByAge]);
+console.log(sortedItems); // eslint-disable-line
 // objects will be sorted by firstname, then by lastname, then by age
 // [
 //   { firstName: 'Alex', lastName: 'Johnson', age: 15 },
