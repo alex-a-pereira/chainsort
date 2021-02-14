@@ -111,6 +111,10 @@ Sort items synchronously. `conditions` should be an array of functions, strings,
 
 Accepts the same arguments as `.sort()`, but returns a Promise which resolves with the sorted data.
 
+#### Sort Condition Options
+
+**order:** enum of 'asc' or 'desc', which indicates the direction that a sort should go.
+
 ---
 
 ## Development
