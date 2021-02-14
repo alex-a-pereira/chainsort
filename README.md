@@ -60,7 +60,7 @@ chainsort(items, ['name', sortByCreatedAt]);
 ```
 
 ### Sorting based on conditions of nested objects
-Data returned from a server often contains nested objects. chainsort accounts for this and allows you to specify a nested keys to sort by.
+Data returned from a server often contains nested objects. chainsort accounts for this and allows you to specify a nested keys to sort by. You can accessed nested objects no matter how deep they are nested! Note that if at any point a nested property doesnt exist in the object, the sorting function will push the item back, as value we attempted access is considered `undefined`.
 
 ```js
 const users = [
@@ -75,20 +75,45 @@ chainsort(users, ['name', 'account.isActive']);
 ---
 
 ## chainsort API
+### Importand Concepts
+#### Sort Conditions
+An array of sort conditions are passed into the `sort` function as the second argument. Sort Conditions can be structured a few different ways. In the following situations, a Sort Condition can take these forms
+
+**Custom sort function**
+
+If you need to sort using a more complex [sorting function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort), pass it in the conditions array. Note that sorting functions must follow the format specified in the link - taking two items as arguments, and returning a Number.
+
+**Access a property of each object**
+
+A string that will be used to access the value at a specific key of the object, for example `'firstName'`
+
+**Access a nested property in the object**
+
+Pass in a string using dot-seperated keys. An example is given above with more context, but it should like `'rootKey.level1Key.level2Key'`.
+
+**Accessing properties with options**
+When sorting based off of properties or nested properties, you'd may wish to pass in options to the sort condition. When Chainsort sees that a sorting condition is an Array, it will consider the first element as the property to access, and the second element to be an object of options.
+
+```js
+chainsort.sort(items, [
+  'firstName', // no options obviously
+  ['lastName', { order: 'desc' }]
+])
+```
+
+### API
+
 **chainsort.sort(items, conditions)**
 
-`items` is an array of objects to be sorted
-
-`conditions` is an array of either:
-- strings to access properties in objects (keys of a property in every)
-    - `'id'`
-- strings to access propertiest in nested objects
-    - `'account.id'`
-- [callback functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+Sort items synchronously. `conditions` should be an array of functions, strings, or Arrays as described above.
 
 **chainsort.sortAsync(items, conditions)**
 
 Accepts the same arguments as `.sort()`, but returns a Promise which resolves with the sorted data.
+
+#### Sort Condition Options
+
+**order:** enum of 'asc' or 'desc', which indicates the direction that a sort should go.
 
 ---
 
