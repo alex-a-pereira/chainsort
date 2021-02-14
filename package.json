@@ -1,6 +1,6 @@
 {
   "name": "chainsort",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A framework to chain together user-supplied, custom sorting algorithms to an array of objects",
   "main": "dist/index.js",
   "author": "Alex Pereira",
@@ -38,5 +38,8 @@
     "sorting",
     "sort",
     "sort object"
+  ],
+  "files": [
+    "dist/"
   ]
 }
