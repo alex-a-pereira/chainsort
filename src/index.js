@@ -1,7 +1,3 @@
-import 'core-js/stable';
-import 'regenerator-runtime';
-import '@babel/register';
-
 import chainSorter from './sorter';
 
 module.exports = {
